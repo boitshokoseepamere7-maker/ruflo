@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green &amp; Gold | Johannesburg's Favourite Pub</title>
+  <meta name="description" content="Real food, proper vibes. Green &amp; Gold Pub — breakfast, pub grub, curries, cocktails and shooters in Johannesburg.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ══ TICKER ══════════════════════════════════════════════════════ -->
+<div class="ticker-wrap" aria-hidden="true">
+  <div class="ticker-track" id="tickerTrack">
+    <span class="ticker-item">🍳 <strong>Breakfast strictly 08:00 – 11:00am</strong></span>
+    <span class="ticker-item">📞 <strong>(011) 679 1015</strong></span>
+    <span class="ticker-item">🌐 <strong>greenandgoldpubs.co.za</strong></span>
+    <span class="ticker-item">💳 Credit &amp; debit cards welcome</span>
+    <span class="ticker-item">🔞 Alcohol not for sale to persons under 18</span>
+    <span class="ticker-item">🏉 The game is always on</span>
+    <span class="ticker-item">🔥 New items now on the menu — check it out</span>
+    <span class="ticker-item">🥩 <strong>200g rump, flame-grilled to order</strong></span>
+    <span class="ticker-item">🍺 Enjoy responsibly</span>
+    <span class="ticker-item">📍 Johannesburg, South Africa</span>
+  </div>
+</div>
+
+<!-- ══ NAV ══════════════════════════════════════════════════════════ -->
+<nav id="mainNav">
+  <a href="#" class="logo">Green <em>&amp;</em> Gold</a>
+
+  <ul class="nav-links">
+    <li><a href="#menu" onclick="switchCatByName('breakfast')">Breakfast</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#cocktails">Drinks</a></li>
+    <li><a href="#shooters">Shooters</a></li>
+    <li><a href="#contact">Find Us</a></li>
+  </ul>
+
+  <div class="nav-right">
+    <button class="tab-btn" onclick="openDrawer()">
+      My Tab
+      <span class="tab-badge" id="tabBadge">0</span>
+    </button>
+    <button class="ham" id="hamBtn" onclick="toggleMob()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ══ MOBILE NAV ══════════════════════════════════════════════════ -->
+<nav class="mob-nav" id="mobNav">
+  <a href="#menu" onclick="closeMob()">Menu</a>
+  <a href="#cocktails" onclick="closeMob()">Drinks</a>
+  <a href="#shooters" onclick="closeMob()">Shooters</a>
+  <a href="#contact" onclick="closeMob()">Find Us</a>
+</nav>
+
+<!-- ══ HERO ══════════════════════════════════════════════════════════ -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+
+  <div class="hero-inner">
+    <div class="hero-eye">Johannesburg's Favourite Pub</div>
+    <h1 class="hero-h1">
+      Real food.<br>
+      <span class="accent">Proper vibes.</span>
+    </h1>
+    <p class="hero-sub">From a legendary full breakfast to flame-grilled steaks, Cape Malay curries and ice-cold cocktails — the game is always on, and the food never lets you down.</p>
+    <div class="hero-ctas">
+      <a href="#menu" class="btn-gold">Explore the Menu &rarr;</a>
+      <a href="#contact" class="btn-ghost">Find Us</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="scroll-bar"></div>
+    Scroll to explore
+  </div>
+</section>
+
+<!-- ══ BREAKFAST BANNER ══════════════════════════════════════════════ -->
+<div class="bfast-bar" id="bfastBar">
+  <div class="bfast-msg">🍳 <strong>Breakfast</strong> served strictly <strong>08:00 – 11:00am</strong> — don't be late</div>
+  <div class="bfast-timer">
+    <span class="timer-lbl">Status:</span>
+    <span class="timer-val" id="timerVal">—</span>
+  </div>
+</div>
+
+<!-- ══ MENU ══════════════════════════════════════════════════════════ -->
+<section class="menu-sec" id="menu">
+  <div class="s-head">
+    <span class="s-label">What we're cooking</span>
+    <h2 class="s-title">The Full <em>Menu</em></h2>
+    <div class="gold-rule"></div>
+  </div>
+
+  <!-- Search + count -->
+  <div class="search-row">
+    <div class="search-box">
+      <span class="search-ico">&#128269;</span>
+      <input type="text" id="searchInput" placeholder="Search dishes…" oninput="onSearch(this.value)" autocomplete="off">
+    </div>
+    <span class="result-ct" id="resultCt"></span>
+  </div>
+
+  <!-- Category tabs -->
+  <div class="cat-tabs" id="catTabs">
+    <button class="cat-tab active" onclick="switchCat('breakfast', this)">🍳 Breakfast</button>
+    <button class="cat-tab" onclick="switchCat('lightFare', this)">🧀 Light Fare</button>
+    <button class="cat-tab" onclick="switchCat('pubGrub', this)">🍖 Pub Grub</button>
+    <button class="cat-tab" onclick="switchCat('pasta', this)">🍝 Pasta</button>
+    <button class="cat-tab" onclick="switchCat('curries', this)">🍛 Curries &amp; Casseroles</button>
+    <button class="cat-tab" onclick="switchCat('salads', this)">🥗 Salads</button>
+  </div>
+
+  <!-- Breakfast note -->
+  <div id="bfastNote" style="margin-bottom:1.75rem; padding:1rem 1.25rem; background:rgba(200,155,10,0.06); border:1px solid rgba(200,155,10,0.18); font-size:0.8rem; color:rgba(242,234,216,0.65); line-height:1.6;">
+    ⏰ <strong style="color:var(--gold-xl)">Breakfast is served strictly 08:00–11:00am.</strong>
+    Items include your choice of sides as described. Ask your waiter about daily specials.
+  </div>
+
+  <!-- Menu grid -->
+  <div class="menu-grid" id="menuGrid"></div>
+</section>
+
+<!-- ══ COCKTAILS ════════════════════════════════════════════════════ -->
+<section class="cktl-sec" id="cocktails">
+  <div class="s-head center reveal">
+    <span class="s-label">Shake it up</span>
+    <h2 class="s-title">Cocktails <em>&amp; Long Drinks</em></h2>
+    <div class="gold-rule"></div>
+    <p style="font-size:0.85rem;color:var(--muted);margin-top:0.75rem;max-width:480px;margin-inline:auto;line-height:1.7;">Ask your waiter about our fish bowl specials and jug deals. Prices vary — see your server for current pricing.</p>
+  </div>
+  <div class="cktl-grid" id="cktlGrid"></div>
+</section>
+
+<!-- ══ SHOOTERS ═══════════════════════════════════════════════════ -->
+<section class="shot-sec" id="shooters">
+  <div class="s-head reveal">
+    <span class="s-label">Down in one</span>
+    <h2 class="s-title">The <em>Shooter Menu</em></h2>
+    <div class="gold-rule"></div>
+  </div>
+
+  <div class="price-pills">
+    <button class="ppill active" data-filter="all" onclick="renderShooters('all')">All Shooters</button>
+    <button class="ppill" data-filter="25" onclick="renderShooters('25')">
+      <span class="pp">R25</span> Shooters
+    </button>
+    <button class="ppill" data-filter="29" onclick="renderShooters('29')">
+      <span class="pp">R29</span> Premium
+    </button>
+  </div>
+
+  <div class="shot-grid" id="shotGrid"></div>
+
+  <p style="margin-top:1.5rem;font-size:0.75rem;color:var(--muted);">Enjoy responsibly. Alcohol not for sale to persons under 18 years of age.</p>
+</section>
+
+<!-- ══ INFO STRIP ════════════════════════════════════════════════════ -->
+<div class="info-strip" id="contact">
+  <div class="reveal">
+    <span class="info-ico">📞</span>
+    <div class="info-lbl">Give us a call</div>
+    <div class="info-val">(011) 679 1015</div>
+    <div class="info-sub">We're here to help</div>
+  </div>
+  <div class="reveal" style="transition-delay:0.1s">
+    <span class="info-ico">🌐</span>
+    <div class="info-lbl">Find us online</div>
+    <div class="info-val">greenandgoldpubs.co.za</div>
+    <div class="info-sub">Specials, events &amp; more</div>
+  </div>
+  <div class="reveal" style="transition-delay:0.2s">
+    <span class="info-ico">⏰</span>
+    <div class="info-lbl">Breakfast hours</div>
+    <div class="info-val">08:00 – 11:00am</div>
+    <div class="info-sub">Strictly no late orders</div>
+  </div>
+  <div class="reveal" style="transition-delay:0.3s">
+    <span class="info-ico">💳</span>
+    <div class="info-lbl">Payment</div>
+    <div class="info-val">Card &amp; Cash</div>
+    <div class="info-sub">Credit &amp; debit cards welcome</div>
+  </div>
+</div>
+
+<!-- ══ FOOTER ════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="ft-grid">
+    <div class="ft-brand">
+      <a href="#" class="logo">Green <em>&amp;</em> Gold</a>
+      <p>Real food, proper vibes — Johannesburg's go-to pub for great grub, cold drinks, and good times. Serving up breakfast, pub classics, curries, pasta, cocktails and shooters every day.</p>
+      <p style="margin-top:1rem;font-size:0.72rem;">© 2024 Green &amp; Gold. Enjoy responsibly. Alcohol not for sale to persons under 18 years. Service charge not included. Prices subject to change without notice. All items subject to availability. Images for illustration purposes only.</p>
+    </div>
+    <div class="ft-col">
+      <h4>On the Menu</h4>
+      <ul>
+        <li><a href="#menu" onclick="switchCat('breakfast', document.querySelector('.cat-tab'))">Breakfast</a></li>
+        <li><a href="#menu">Light Fare</a></li>
+        <li><a href="#menu">Pub Grub</a></li>
+        <li><a href="#menu">Pasta</a></li>
+        <li><a href="#menu">Curries &amp; Casseroles</a></li>
+        <li><a href="#menu">Salads</a></li>
+        <li><a href="#cocktails">Cocktails</a></li>
+        <li><a href="#shooters">Shooters</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>Get in Touch</h4>
+      <ul>
+        <li>(011) 679 1015</li>
+        <li>www.greenandgoldpubs.co.za</li>
+        <li style="margin-top:0.5rem;">Breakfast: 08:00 – 11:00am</li>
+        <li>Credit &amp; debit cards welcome</li>
+        <li style="margin-top:0.5rem;">Terms &amp; conditions apply</li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <p>© 2024 Green &amp; Gold Pubs. All rights reserved.</p>
+    <p>Made with ❤️ in South Africa</p>
+  </div>
+</footer>
+
+<!-- ══ TOAST ════════════════════════════════════════════════════════ -->
+<div class="toast" id="toast"></div>
+
+<!-- ══ OVERLAY ══════════════════════════════════════════════════════ -->
+<div class="overlay" id="overlay" onclick="closeDrawer()"></div>
+
+<!-- ══ ORDER DRAWER ══════════════════════════════════════════════════ -->
+<div class="drawer" id="drawer" role="dialog" aria-label="Your tab">
+  <div class="drawer-head">
+    <h3 class="drawer-title">Your Tab <span id="tabCount" style="font-family:'Inter',sans-serif;font-size:0.8rem;color:var(--muted);font-weight:400;margin-left:0.5rem;"></span></h3>
+    <button class="drawer-x" onclick="closeDrawer()" aria-label="Close">&#10005;</button>
+  </div>
+  <div class="drawer-body" id="drawerBody">
+    <div class="drawer-empty">
+      <span class="de-ico">🍺</span>
+      <p>Your tab is empty.<br>Add some items from the menu!</p>
+    </div>
+  </div>
+  <div class="drawer-foot">
+    <div class="drawer-total">
+      <span class="dt-label">Tab Total</span>
+      <span class="dt-amt" id="drawerAmt">R0</span>
+    </div>
+    <button class="btn-gold btn-full" onclick="callWaiter()">🙋 Call the Waiter</button>
+  </div>
+</div>
+
+<script src="app.js"></script>
+<script>
+  // hide bfast note when not on breakfast tab
+  const origSwitch = window.switchCat;
+  window.switchCat = function(cat, btn) {
+    origSwitch(cat, btn);
+    document.getElementById('bfastNote').style.display = cat === 'breakfast' ? '' : 'none';
+  };
+</script>
+</body>
+</html>
