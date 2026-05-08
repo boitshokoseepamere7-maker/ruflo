@@ -22,7 +22,8 @@
     <span class="ticker-item">🔞 Alcohol not for sale to persons under 18</span>
     <span class="ticker-item">🏉 The game is always on</span>
     <span class="ticker-item">🔥 New items now on the menu — check it out</span>
-    <span class="ticker-item">🥩 <strong>200g rump, flame-grilled to order</strong></span>
+    <span class="ticker-item">🥧 <strong>Pie &amp; Pint special — any pie + free 500ml Castle Draught</strong></span>
+    <span class="ticker-item">🥩 <strong>Flame-grilled steaks from R149 — rare to well done</strong></span>
     <span class="ticker-item">🍺 Enjoy responsibly</span>
     <span class="ticker-item">📍 Johannesburg, South Africa</span>
   </div>
@@ -33,8 +34,8 @@
   <a href="#" class="logo">Green <em>&amp;</em> Gold</a>
 
   <ul class="nav-links">
-    <li><a href="#menu" onclick="switchCatByName('breakfast')">Breakfast</a></li>
     <li><a href="#menu">Menu</a></li>
+    <li><a href="#sides">Sides</a></li>
     <li><a href="#cocktails">Drinks</a></li>
     <li><a href="#shooters">Shooters</a></li>
     <li><a href="#contact">Find Us</a></li>
@@ -119,6 +120,8 @@
     <button class="cat-tab" onclick="switchCat('pasta', this)">🍝 Pasta</button>
     <button class="cat-tab" onclick="switchCat('curries', this)">🍛 Curries &amp; Casseroles</button>
     <button class="cat-tab" onclick="switchCat('salads', this)">🥗 Salads</button>
+    <button class="cat-tab" onclick="switchCat('pies', this)">🥧 Pies</button>
+    <button class="cat-tab" onclick="switchCat('grills', this)">🔥 Grills</button>
   </div>
 
   <!-- Breakfast note -->
@@ -127,8 +130,50 @@
     Items include your choice of sides as described. Ask your waiter about daily specials.
   </div>
 
+  <!-- Pie & Pint special -->
+  <div id="pieAndPint" class="pie-pint-banner" style="display:none">
+    <div class="ppb-left">
+      <span class="ppb-tag">Special Deal</span>
+      <div class="ppb-title">Pie &amp; Pint</div>
+      <p class="ppb-desc">Order <strong>any homemade pie</strong> and receive a complimentary <strong>500ml Castle Draught</strong> on the house. All pies served with chips.</p>
+    </div>
+    <div class="ppb-right">
+      <span class="ppb-castle">🍺</span>
+      <span class="ppb-free">Free Castle Draught</span>
+    </div>
+  </div>
+
+  <!-- Grill note -->
+  <div id="grillNote" style="display:none; margin-bottom:1.75rem; padding:1rem 1.25rem; background:rgba(200,155,10,0.06); border:1px solid rgba(200,155,10,0.18); font-size:0.8rem; color:rgba(242,234,216,0.65); line-height:1.6;">
+    🔥 <strong style="color:var(--gold-xl)">All grills served with onion rings &amp; chips or baked potato.</strong>
+    Steaks flame-grilled to your liking — rare, medium or well done. Ask your waiter to add a sauce for R35.
+  </div>
+
   <!-- Menu grid -->
   <div class="menu-grid" id="menuGrid"></div>
+</section>
+
+<!-- ══ SIDES & SAUCES ══════════════════════════════════════════════ -->
+<section class="ss-sec" id="sides">
+  <div class="ss-inner">
+    <div class="ss-col">
+      <div class="s-head">
+        <span class="s-label">Add to your meal</span>
+        <h3 class="s-title" style="font-size:1.6rem;">Sides</h3>
+        <div class="gold-rule"></div>
+      </div>
+      <div class="ss-grid" id="sidesGrid"></div>
+    </div>
+    <div class="ss-divider"></div>
+    <div class="ss-col">
+      <div class="s-head">
+        <span class="s-label">For your steak</span>
+        <h3 class="s-title" style="font-size:1.6rem;">Sauces <em style="font-size:1rem;">R35 each</em></h3>
+        <div class="gold-rule"></div>
+      </div>
+      <div class="ss-grid" id="saucesGrid"></div>
+    </div>
+  </div>
 </section>
 
 <!-- ══ COCKTAILS ════════════════════════════════════════════════════ -->
@@ -210,6 +255,9 @@
         <li><a href="#menu">Pasta</a></li>
         <li><a href="#menu">Curries &amp; Casseroles</a></li>
         <li><a href="#menu">Salads</a></li>
+        <li><a href="#menu">🥧 Pies (+ free Castle!)</a></li>
+        <li><a href="#menu">🔥 Grills</a></li>
+        <li><a href="#sides">Sides &amp; Sauces</a></li>
         <li><a href="#cocktails">Cocktails</a></li>
         <li><a href="#shooters">Shooters</a></li>
       </ul>
@@ -260,7 +308,6 @@
 
 <script src="app.js"></script>
 <script>
-  // hide bfast note when not on breakfast tab
   const origSwitch = window.switchCat;
   window.switchCat = function(cat, btn) {
     origSwitch(cat, btn);

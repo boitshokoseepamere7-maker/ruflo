@@ -79,8 +79,45 @@ const MENU = {
     { name: "Spicy Chicken & Avo Salad", price: 129, desc: "Juicy chicken breast fillets sautéed in rough chilli with a hint of garlic, served on a bed of exotic lettuce leaves and topped with sliced avocado and a tangy sweet chilli dressing." },
     { name: "Caribbean Chicken Salad", price: 155, desc: "Chicken breast strips marinated in tequila and lime, pan-fried with fresh pineapple pieces. Served on a bed of exotic lettuce leaves, tomato, cucumber, onion and peppadews, topped with cheddar cheese and a sweet chilli dressing, with toasted pita wedges." },
     { name: "Halloumi, Bacon & Avo", price: 149, desc: "Grilled halloumi cheese, crispy bacon and creamy avocado on a bed of fresh rocket and mixed greens, with cherry tomatoes and a honey mustard dressing." },
-    { name: "Biltong & Avo Salad", price: 159, desc: "Shredded biltong and sliced avocado on a bed of exotic mixed greens, with cherry tomatoes, red onion and a light balsamic vinaigrette." },
-    { name: "Smoked Salmon Salad", price: 179, desc: "Norwegian smoked salmon on a bed of mixed greens with capers, red onion, cucumber ribbons, Danish feta and a lemon cream dressing." },
+    { name: "Biltong & Avo Salad", price: 159, desc: "Crisp lettuce leaves topped with traditional beef biltong slices, avocado, peppadews, rocket and mixed peppers, served with our creamy blue cheese dressing." },
+    { name: "Smoked Salmon Salad", price: 179, desc: "A bed of exotic lettuce leaves topped with fresh smoked salmon and creamy cottage cheese, dressed with chopped spring onion." },
+  ],
+  pies: [
+    { name: "Cottage Pie", price: 125, desc: "Savoury beef mince with onions, baby carrots and peas prepared in a thick gravy and topped with creamy mashed potatoes and melted cheddar cheese. No chips.", tags: ["hot"] },
+    { name: "Chicken & Mushroom", price: 155, desc: "Chicken cubes and sliced white button mushrooms, sautéed with mixed spices and covered in a creamy white sauce, topped with a golden puff pastry lid." },
+    { name: "Spinach & Feta", price: 149, desc: "A puff pastry parcel stuffed with creamed spinach, Danish feta, sliced white mushrooms, julienne red peppers and a little garlic, served with lemon butter sauce and a fresh crisp salad." },
+    { name: "Trinchado Pie", price: 165, desc: "Tender beef cubes, pan-fried in a creamy garlic and white wine sauce with a hint of fresh chilli, topped with a crispy golden pastry lid." },
+    { name: "Hot Little Rooster", price: 159, desc: "Tender chicken cubes grilled in a rough chilli mix, slices of jalapeños, mozzarella cheese and creamed spinach all wrapped in a golden shell of puff pastry, served with brown onion gravy.", tags: ["hot"] },
+    { name: "Chicken & Spicy Mushroom", price: 165, desc: "Diced chicken breast, mozzarella cheese and creamed spinach wrapped in pastry and covered in a spicy mushroom sauce.", tags: ["hot"] },
+    { name: "Pepper Steak", price: 179, desc: "Lean diced beef sautéed in a rough pepper sauce, topped with a light pastry lid." },
+    { name: "Beef, Bacon & Guinness", price: 179, desc: "Tender beef cubes, bacon bits and Guinness stewed overnight and covered with a puff pastry lid.", tags: ["hot"] },
+    { name: "Steak & Kidney", price: 169, desc: "A combination of prime beef cubes and diced kidney braised with onions, carrots and potatoes in a thick brown onion gravy, topped with a puff pastry lid." },
+    { name: "Beef & Veg", price: 169, desc: "Tender beef cubes, potatoes, carrots and peas in a thick brown onion gravy, stewed overnight with fresh herbs and topped with a crisp puff pastry lid." },
+    { name: "Legends Burger Pie", price: 169, desc: "Our famous 100% homemade beef patty, crispy bacon and grated cheddar cheese wrapped in a golden pastry, topped with a creamy bacon & mushroom sauce." },
+    { name: "Chicken & Prawn", price: 179, desc: "Tender chicken breast cubes and succulent prawns sautéed with white mushrooms and covered in mozzarella cheese, packed into a golden pastry pocket and doused in our creamy cheese sauce." },
+    { name: "Lamb & Mint", price: 199, desc: "Boneless lamb cubes slow-cooked in a sweet mint sauce, topped with a golden pastry lid." },
+    { name: "Bob's Bunny Pie", price: 199, desc: "Lamb curry with feta cheese and sweet chutney wrapped in golden puff pastry.", tags: ["hot"] },
+  ],
+  grills: [
+    { name: "Tender Aged Rump", price: 149, desc: "Flame-grilled prime cut of rump, charred on the outside, tender within. Served with onion rings and chips or baked potato.", sizes: [{ label: "200g", price: 149 }, { label: "300g", price: 179 }] },
+    { name: "Prime Cut Fillet", price: 195, desc: "The crown jewel — char-grilled to your exact liking. Served with onion rings and chips or baked potato.", sizes: [{ label: "200g", price: 195 }, { label: "300g", price: 249 }] },
+    { name: "T-Bone Steak", price: 189, desc: "The classic — a full T-bone, flame-grilled and served with onion rings and chips or baked potato.", sizes: [{ label: "400g", price: 189 }, { label: "600g", price: 239 }] },
+    { name: "Juicy BBQ Ribs", price: 169, desc: "Tender pork loin ribs basted in our sweet & sticky marinade and grilled to perfection. Served with onion rings and chips or baked potato.", sizes: [{ label: "300g", price: 169 }, { label: "600g", price: 279 }, { label: "900g", price: 399 }], tags: ["hot"] },
+    { name: "Mexican Rump", price: 199, desc: "A succulent 300g rump steak topped with our creamy garlic & chilli trinchado sauce. Served with onion rings and chips or baked potato.", tags: ["hot"] },
+    { name: "Inkosi Rump", price: 229, desc: "A 300g rump topped with crispy bacon rashers, guacamole and melted mozzarella cheese. Served with onion rings and chips or baked potato." },
+    { name: "Portuguese Rump", price: 209, desc: "A succulent 300g rump, topped with our spicy prego sauce and a fried egg. Served with onion rings and chips or baked potato.", tags: ["hot"] },
+    { name: "Halloumi & Avo Rump", price: 229, desc: "A tender 300g rump, flame-grilled to perfection and topped with grilled halloumi cheese and avocado slices. Served with onion rings and chips or baked potato." },
+    { name: "Snails & Garlic Rump", price: 229, desc: "A 300g rump grilled to perfection, topped with snails and a creamy garlic & white wine sauce. Served with onion rings and chips or baked potato." },
+    { name: "Surf & Turf", price: 229, desc: "A tender 300g rump char-grilled to perfection, topped with pan-fried calamari in a thick creamy garlic sauce. Served with onion rings and chips or baked potato." },
+    { name: "Bacon, Avo & Feta Fillet", price: 239, desc: "A prime 200g fillet topped with crispy bacon, feta cubes and finished off with fresh avocado slices. Served with onion rings and chips or baked potato." },
+    { name: "Stuffed Fillet", price: 239, desc: "A succulent 200g fillet stuffed with white button mushrooms, Danish feta and crushed garlic, char-grilled to perfection. Served with onion rings and chips or baked potato." },
+    { name: "Fillet Jalapeño", price: 239, desc: "200g prime cut fillet, stuffed with mozzarella cheese and jalapeños and grilled to your liking. Served with onion rings and chips or baked potato.", tags: ["hot"] },
+    { name: "Blue cheese Fillet", price: 249, desc: "A tender 200g fillet char-grilled to perfection, complemented with a creamy blue cheese sauce. Served with onion rings and chips or baked potato." },
+    { name: "Fillet Perrini", price: 219, desc: "A 200g succulent fillet steak, char-grilled to perfection, smothered in our famous peri-peri chicken livers. Served with onion rings and chips or baked potato.", tags: ["hot"] },
+    { name: "Steak & Rib Combo", price: 289, desc: "Flame-grilled prime cut of 200g rump and succulent 300g pork ribs, grilled on an open flame. Served with onion rings and chips or baked potato." },
+    { name: "Steak & Wing Combo", price: 269, desc: "Flame-grilled prime cut of 200g rump with juicy chicken wings grilled to perfection in our sweet and sticky marinade, served with BBQ sauce on the side." },
+    { name: "Rib & Wing Combo", price: 299, desc: "600g tender pork loin ribs and chicken wings grilled to perfection in our sweet and sticky marinade, served with BBQ sauce." },
+    { name: "Grilled Lamb Chops", price: 279, desc: "Three succulent 150g Karoo lamb loin chops grilled on an open flame and complemented with a fresh mint sauce. Served with onion rings and chips or baked potato." },
   ],
 };
 
@@ -88,7 +125,9 @@ const COCKTAILS = [
   { name: "Mojito Original", ing: "Bacardi, Mojito mix, mint leaves, lime wedges, sugar syrup and soda water", ico: "🍹" },
   { name: "Amarula Chocolate Shake", ing: "Amarula, vodka, Nachtmusik and ice cream", ico: "🥤" },
   { name: "Singapore Swing", ing: "Gin, cherry liqueur, triple sec, brandy, lime, grenadine and pineapple juice", ico: "🌸" },
+  { name: "Long Island Iced Tea", ing: "Bacardi, silver tequila, gin, vodka, triple sec, sour mix and coke", ico: "🫗" },
   { name: "Californian Iced Tea", ing: "Bacardi, vodka, gin, gold tequila, blue curacao, sour mix and lemonade", ico: "🍋" },
+  { name: "Espresso Martini", ing: "Vodka, Kahlua and espresso", ico: "☕" },
   { name: "Bloody Mary", ing: "Vodka, tomato cocktail, celery, pepper, Tabasco and Worcestershire Sauce", ico: "🍅" },
   { name: "Berry Chiller", ing: "Vodka, amaretto, triple sec, orange and wild berry juice", ico: "🫐" },
   { name: "Gordon's Berry Fizz", ing: "Gordon's gin, lemon, cranberry juice and ginger ale", ico: "🍾" },
@@ -97,6 +136,31 @@ const COCKTAILS = [
   { name: "Hippie Juice", ing: "Malibu, watermelon vodka, triple sec and pink ice", ico: "🌈" },
   { name: "Fizzpop", ing: "Vodka, apple sours, sparberry", ico: "✨", isNew: true },
   { name: "Watermelon Fizzpop", ing: "Vodka, watermelon liqueur, lime juice and mint", ico: "🍉", isNew: true },
+];
+
+const SIDES = [
+  { name: "Greek Side Salad", price: 39 },
+  { name: "Onion Rings", price: 29 },
+  { name: "Garlic Roll", price: 39 },
+  { name: "Bruschetta", price: 59 },
+  { name: "Vegetables (per 2)", price: 49 },
+  { name: "Pap and Gravy", price: 49 },
+  { name: "Mashed Potato", price: 25 },
+  { name: "Baked Potato", price: 19 },
+  { name: "Crumbed Mushrooms with Tartare Sauce", price: 75 },
+];
+
+const SAUCES = [
+  { name: "Bacon & Mushroom", price: 35 },
+  { name: "Creamy Peri-Peri", price: 35 },
+  { name: "Cheese", price: 35 },
+  { name: "Garlic & White Wine", price: 35 },
+  { name: "Creamy Pepper", price: 35 },
+  { name: "Creamy Mushroom", price: 35 },
+  { name: "Tartare", price: 35 },
+  { name: "Trinchado", price: 35 },
+  { name: "Jalapeño Mayo", price: 35 },
+  { name: "Blue Cheese", price: 35 },
 ];
 
 const SHOOTERS_25 = [
@@ -171,6 +235,14 @@ function renderMenu() {
 
   resultCt.textContent = `${filtered.length} item${filtered.length !== 1 ? 's' : ''}`;
 
+  // Pie & Pint special banner
+  const ppBanner = document.getElementById('pieAndPint');
+  if (ppBanner) ppBanner.style.display = currentCat === 'pies' ? '' : 'none';
+
+  // Grill note
+  const grillNote = document.getElementById('grillNote');
+  if (grillNote) grillNote.style.display = currentCat === 'grills' ? '' : 'none';
+
   if (!filtered.length) {
     menuGrid.innerHTML = `<div class="empty-state"><span class="empty-ico">🔍</span><p>No matches for "<strong>${searchTerm}</strong>" — try another search.</p></div>`;
     return;
@@ -178,8 +250,16 @@ function renderMenu() {
 
   menuGrid.innerHTML = filtered.map((item, i) => {
     const tags = (item.tags || []).map(t => `<span class="tag tag-${t}">${t}</span>`).join('');
-    const variants = item.variants ? `<div class="mc-variants">${item.variants.map(v => `<span class="mc-var">${v.label} <span class="vp">R${v.price}</span></span>`).join('')}</div>` : '';
-    const showPrice = item.variants ? item.variants[0].price : item.price;
+    // size variants (grills) — displayed differently
+    let sizesHtml = '';
+    let showPrice = item.price;
+    if (item.sizes) {
+      showPrice = item.sizes[0].price;
+      sizesHtml = `<div class="mc-sizes">${item.sizes.map(s => `<span class="mc-size"><span class="sz-wt">${s.label}</span><span class="sz-p">R${s.price}</span></span>`).join('')}</div>`;
+    } else if (item.variants) {
+      sizesHtml = `<div class="mc-variants">${item.variants.map(v => `<span class="mc-var">${v.label} <span class="vp">R${v.price}</span></span>`).join('')}</div>`;
+      showPrice = item.variants[0].price;
+    }
     return `
       <div class="mc reveal" style="transition-delay:${i * 0.04}s">
         <div class="mc-head">
@@ -187,7 +267,7 @@ function renderMenu() {
           <div class="mc-price"><span class="r">R</span>${showPrice}</div>
         </div>
         <p class="mc-desc">${item.desc}</p>
-        ${variants}
+        ${sizesHtml}
         <div class="mc-foot">
           <div class="mc-tags">${tags}</div>
           <button class="add-btn" onclick="addToTab(${JSON.stringify(item).replace(/"/g, '&quot;')})" title="Add to tab">+</button>
@@ -195,12 +275,27 @@ function renderMenu() {
       </div>`;
   }).join('');
 
-  // Trigger reveal
   requestAnimationFrame(() => {
     document.querySelectorAll('.mc.reveal').forEach((el, i) => {
       setTimeout(() => el.classList.add('in'), i * 40);
     });
   });
+}
+
+/* ===== SIDES & SAUCES ===== */
+function renderSidesSauces() {
+  const sidesEl = document.getElementById('sidesGrid');
+  const saucesEl = document.getElementById('saucesGrid');
+  if (sidesEl) sidesEl.innerHTML = SIDES.map(s => `
+    <div class="ss-item">
+      <span class="ss-name">${s.name}</span>
+      <span class="ss-price">R${s.price}</span>
+    </div>`).join('');
+  if (saucesEl) saucesEl.innerHTML = SAUCES.map(s => `
+    <div class="ss-item">
+      <span class="ss-name">${s.name}</span>
+      <span class="ss-price">R${s.price}</span>
+    </div>`).join('');
 }
 
 /* ===== CATEGORY SWITCH ===== */
@@ -369,6 +464,7 @@ window.addEventListener('DOMContentLoaded', () => {
   renderMenu();
   renderCocktails();
   renderShooters('all');
+  renderSidesSauces();
   updateTimer();
   setInterval(updateTimer, 30000);
   window.addEventListener('scroll', onScroll, { passive: true });
